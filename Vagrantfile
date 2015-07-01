@@ -83,6 +83,7 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "nodejs"
     chef.add_recipe "ruby_build"
     chef.add_recipe "rvm::user_install"
+    chef.add_recipe "rvm::user" # testar se ele instala o ruby
     chef.add_recipe "rvm::vagrant"
     chef.add_recipe "vim"
     chef.add_recipe "mysql::server"
@@ -102,8 +103,17 @@ Vagrant.configure(2) do |config|
         user_installs: [
           {
             user: 'vagrant',
-            rubies: ['2.2.2', '2.2.1'],
-            default_ruby: '2.2.2'
+            rubies: ['2.2.2', '2.2.1', '1.9.3'],
+            rvm_gem_options: "--no-ri --no-rdoc",
+            default_ruby: '2.2.2',
+            rvmrc: {
+              rvm_project_rvmrc: 1,
+              rvm_gemset_create_on_use_flag: 1,
+              rvm_pretty_print_flag: 1
+            },
+            global_gems: [
+              { name: 'bundler' }
+            ]
           }
         ]
       },
