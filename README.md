@@ -1,3 +1,8 @@
 # custom-rails-box
 
-vagrant up
+> vagrant plugin install vagrant-vbguest
+
+> vagrant plugin install vagrant-librarian-chef-nochef
+
+> vagrant up
+

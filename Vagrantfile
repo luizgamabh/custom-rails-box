@@ -70,6 +70,7 @@ Vagrant.configure(2) do |config|
   #   sudo apt-get install apache2
   # SHELL
   config.vm.provision :chef_solo do |chef|
+    chef.version = "12.3.0"
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
 
     chef.add_recipe "apt"
@@ -89,6 +90,8 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "imagemagick"
     chef.add_recipe "imagemagick::devel"
     # chef.add_recipe "imagemagick::rmagick"
+    chef.add_recipe "xml"
+    chef.add_recipe "custombox"
 
     chef.json = {
       java: {
