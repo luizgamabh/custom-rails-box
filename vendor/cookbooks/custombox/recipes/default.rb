@@ -11,3 +11,25 @@ package "libxslt-dev" do
     "default" => "libxslt1-dev"
   )
 end
+
+file '/home/vagrant/.gemrc' do
+	content 'gem: --no-ri --no-rdoc'
+	mode 0644
+	owner 'vagrant'
+	group 'vagrant'
+end
+
+template '~/.bashrc_template' do
+	source 'bashrc_template'
+	# mode 0755
+	# owner 'vagrant'
+	# group 'vagrant'
+end
+
+execute 'append_to_bashrc' do
+	command "cat /home/vagrant/.bashrc_template >> /home/vagrant/.bashrc"
+end
+
+file '/home/vagrant/bashrc_template' do
+	action :delete
+end
