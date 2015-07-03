@@ -19,7 +19,7 @@ file '/home/vagrant/.gemrc' do
 	group 'vagrant'
 end
 
-template '~/.bashrc_template' do
+template '/home/vagrant/.bashrc_template' do
 	source 'bashrc_template'
 	# mode 0755
 	# owner 'vagrant'
@@ -30,6 +30,6 @@ execute 'append_to_bashrc' do
 	command "cat /home/vagrant/.bashrc_template >> /home/vagrant/.bashrc"
 end
 
-file '/home/vagrant/bashrc_template' do
+file '/home/vagrant/.bashrc_template' do
 	action :delete
 end
