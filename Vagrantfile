@@ -112,7 +112,9 @@ Vagrant.configure(2) do |config|
               rvm_pretty_print_flag: 1
             },
             global_gems: [
-              { name: 'bundler' }
+              { name: 'bundler' },
+              { name: 'sass' },
+              { name: 'compass' }
             ]
           }
         ]
