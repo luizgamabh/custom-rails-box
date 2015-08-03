@@ -114,7 +114,6 @@ Vagrant.configure(2) do |config|
             },
             global_gems: [
               { name: 'bundler' },
-              { name: 'rails' },
               { name: 'sass' },
               { name: 'compass' }
             ]

@@ -26,6 +26,11 @@ template '/home/vagrant/.bashrc_template' do
 	# group 'vagrant'
 end
 
+execute 'install rails on default rvm ruby' do
+	command "gem install rails"
+	not_if 'gem list | grep -w "^rails\b"'
+end
+
 execute 'append_to_bashrc' do
 	command "cat /home/vagrant/.bashrc_template >> /home/vagrant/.bashrc"
 end
