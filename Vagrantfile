@@ -92,6 +92,9 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "imagemagick"
     chef.add_recipe "imagemagick::devel"
     # chef.add_recipe "imagemagick::rmagick"
+    chef.add_recipe "redis::install_from_release"
+    chef.add_recipe "redis::client"
+    chef.add_recipe "redis::server"
     chef.add_recipe "xml"
     chef.add_recipe "custombox"
 
