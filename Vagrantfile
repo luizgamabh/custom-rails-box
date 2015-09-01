@@ -26,6 +26,8 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 3306, host: 3366
 
+  # config.vbguest.auto_update = false
+
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
@@ -92,9 +94,9 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "imagemagick"
     chef.add_recipe "imagemagick::devel"
     # chef.add_recipe "imagemagick::rmagick"
-    chef.add_recipe "redis"
-    chef.add_recipe "redis::client"
-    chef.add_recipe "redis::server"
+    chef.add_recipe "redisio"
+    chef.add_recipe "redisio::install"
+    chef.add_recipe "redisio::enable"
     chef.add_recipe "xml"
     chef.add_recipe "custombox"
 
