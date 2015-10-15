@@ -109,7 +109,7 @@ Vagrant.configure(2) do |config|
         user_installs: [
           {
             user: 'vagrant',
-            rubies: ['2.2.2', '2.2.1', '1.9.3'],
+            rubies: ['2.2.2', '1.9.3'], # 2.2.1 gone
             rvm_gem_options: "--no-ri --no-rdoc",
             default_ruby: '2.2.2',
             rvmrc: {
@@ -126,6 +126,7 @@ Vagrant.configure(2) do |config|
         ]
       },
       mysql: {
+        version: "5.5",
         server_root_password: '',
         bind_address: '0.0.0.0',
         port: '3306'
