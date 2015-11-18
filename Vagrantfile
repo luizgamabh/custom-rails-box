@@ -109,9 +109,9 @@ Vagrant.configure(2) do |config|
         user_installs: [
           {
             user: 'vagrant',
-            rubies: ['2.2.1', '1.9.3'], # 2.2.1 gone
+            rubies: ['2.2.2', '1.9.3'], # 2.2.1 gone
             rvm_gem_options: "--no-ri --no-rdoc",
-            default_ruby: '2.2.1',
+            default_ruby: '2.2.2',
             rvmrc: {
               rvm_project_rvmrc: 1,
               rvm_gemset_create_on_use_flag: 1,
@@ -119,8 +119,7 @@ Vagrant.configure(2) do |config|
             },
             global_gems: [
               { name: 'bundler' },
-              { name: 'sass' },
-              { name: 'compass' }
+              { name: 'sass' }
             ]
           }
         ]
