@@ -109,9 +109,9 @@ Vagrant.configure(2) do |config|
         user_installs: [
           {
             user: 'vagrant',
-            rubies: ['2.2.2'],
+            rubies: ['2.2.1'],
             rvm_gem_options: "--no-ri --no-rdoc",
-            default_ruby: '2.2.2',
+            default_ruby: '2.2.1',
             rvmrc: {
               rvm_project_rvmrc: 1,
               rvm_gemset_create_on_use_flag: 1,
